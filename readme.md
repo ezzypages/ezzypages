@@ -2,6 +2,8 @@
 
 ![ezzypages logo](https://avatars.githubusercontent.com/u/230987182?s=200&v=4)
 
+# https://e7s-corp.ru/
+
 ---
 
 ## Генерация и публикация лендингов без лишней суеты
