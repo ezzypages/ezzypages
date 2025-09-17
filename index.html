@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ezzypages — Генерация и хостинг лендингов</title>
+  <meta name="description" content="ezzypages — платформа для генерации, редактирования и публикации лендингов. Поддомены, кастомные домены, статика из S3/CDN." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ezzypages — Генерация и хостинг лендингов" />
+  <meta property="og:description" content="Генерируй лендинги блоками, правь в IDE и публикуй на свой домен." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://<your-gh-pages-domain>" />
+
+  <link rel="icon" href="favicon.ico" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#555555;
+      --card:#f7f7f7;
+      --border:#e5e5e5;
+      --maxw:960px;
+      --radius:12px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0f1114;
+        --text:#e8e8e8;
+        --muted:#a0a6b0;
+        --card:#171a1f;
+        --border:#262a31;
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif;
+      background:var(--bg); color:var(--text);
+    }
+    .container{max-width:var(--maxw); margin:0 auto; padding:24px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0;
+      border-bottom:1px solid var(--border);
+    }
+    .logo{display:flex; align-items:center; gap:10px; color:inherit; text-decoration:none; font-weight:700}
+    .badge{
+      display:inline-grid; place-items:center; width:36px; height:36px;
+      background:var(--card); border:1px solid var(--border); border-radius:10px; font-weight:800;
+    }
+    nav a{
+      color:var(--muted); text-decoration:none; margin-left:16px; font-weight:600;
+    }
+    nav a:hover{color:var(--text)}
+    .hero{display:grid; gap:18px; padding:48px 0 24px}
+    .hero h1{margin:0; font-size:clamp(28px,4vw,42px); line-height:1.15}
+    .lead{color:var(--muted); font-size:clamp(16px,2vw,19px)}
+    .cta{display:flex; flex-wrap:wrap; gap:10px}
+    .btn{
+      display:inline-block; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none;
+      border:1px solid var(--border); background:var(--card); color:inherit;
+    }
+    .grid{
+      display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      margin-top:10px;
+    }
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px;
+    }
+    .card h3{margin:.2rem 0 .3rem; font-size:18px}
+    .muted{color:var(--muted)}
+    .code{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      background:transparent; padding:0 .25em; border-radius:6px; border:1px dashed var(--border);
+    }
+    footer{
+      border-top:1px solid var(--border); margin-top:36px; padding:20px 0; color:var(--muted); font-size:14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="logo" href="#top">
+        <img src="https://avatars.githubusercontent.com/u/230987182?s=200&v=4" alt="ezzypages logo" style="width:32px;height:32px;border-radius:6px" />
+        <span>ezzypages</span>
+      </a>
+      <nav>
+        <a href="#features">Возможности</a>
+        <a href="#how">Как это работает</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <h1>Генерация и публикация лендингов без лишней суеты</h1>
+        <p class="lead">ezzypages — платформа для быстрой сборки страниц из блоков, редактирования в IDE-подобном интерфейсе и публикации на поддомен или собственный домен. Статические файлы отдаются из S3/CDN.</p>
+        <div class="cta">
+          <a class="btn" href="https://github.com/<org>/<repo>" target="_blank" rel="noopener">Репозиторий</a>
+          <a class="btn" href="https://example.e7s.ru" target="_blank" rel="noopener">Пример страницы</a>
+          <a class="btn" href="#docs">Документация</a>
+        </div>
+      </section>
+
+      <section id="features">
+        <div class="grid">
+          <article class="card">
+            <h3>Блоки и чистый код</h3>
+            <p class="muted">Конструктор секций (hero, фичи, FAQ, CTA) и экспорт аккуратного <span class="code">HTML/CSS</span>.</p>
+          </article>
+          <article class="card">
+            <h3>Домены и HTTPS</h3>
+            <p class="muted">Поддомены и кастомные домены с автоматическим HTTPS и базовыми заголовками.</p>
+          </article>
+          <article class="card">
+            <h3>S3 / CDN</h3>
+            <p class="muted">Статика из S3 с кешированием и быстрой доставкой через CDN.</p>
+          </article>
+          <article class="card">
+            <h3>Git-флоу</h3>
+            <p class="muted">Работа через PR, проверки CI и предпросмотр веток.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how" style="margin-top:24px">
+        <div class="grid">
+          <article class="card">
+            <h3>1. Репозиторий</h3>
+            <p class="muted">Используй шаблон или форк. Настрой <span class="code">.env</span> локально.</p>
+          </article>
+          <article class="card">
+            <h3>2. Сборка страницы</h3>
+            <p class="muted">Добавь блоки, тексты и изображения. Проверь адаптивность.</p>
+          </article>
+          <article class="card">
+            <h3>3. Публикация</h3>
+            <p class="muted">Мёрдж в <span class="code">main</span> запускает деплой на GitHub Pages или S3/CDN.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacts" style="margin-top:24px">
+        <div class="card">
+          <h3>Команда и поддержка</h3>
+          <p class="muted">Над проектом работает команда. Вопросы и предложения отправляйте на почту: <a href="mailto:support@ezzypages.ru">support@ezzypages.ru</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 ezzypages • <a href="mailto:support@ezzypages.ru" style="color:inherit">support@ezzypages.ru</a>
+    </footer>
+  </div>
+</body>
+</html>
